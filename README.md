@@ -24,5 +24,6 @@ Expected URL: https://souglad21.github.io/SchemaPose/
 - Edit layout and colors in `style.css`; interactions are in `script.js`.
 - Figures are in `assets/figures/`.
 - The eight complete demo videos are in `assets/videos/`, with cover frames in `assets/posters/`. Videos use H.264 and support progressive playback.
+- Google Sans is served locally from `assets/fonts/`; its SIL Open Font License is included in that directory.
 
 Paper and code buttons currently display **Coming soon**. When ready, replace their disabled buttons with links.

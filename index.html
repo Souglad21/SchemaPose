@@ -14,28 +14,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://souglad21.github.io/SchemaPose/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="preload" href="assets/fonts/google-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/google-sans-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="navigation container" aria-label="Main navigation">
-      <a class="wordmark" href="#top" aria-label="SchemaPose, back to top"><span class="brand-symbol" aria-hidden="true">S</span>SchemaPose</a>
-      <div class="nav-links">
-        <a href="#abstract">Abstract</a>
-        <a href="#schema">Schema</a>
-        <a href="#method">Method</a>
-        <a href="#results">Results</a>
-        <a href="#videos">Videos</a>
-      </div>
-    </nav>
-  </header>
-
   <main id="main">
     <section class="hero container" id="top" aria-labelledby="paper-title">
-      <p class="venue"><span aria-hidden="true"></span>NeurIPS 2026</p>
-      <h1 id="paper-title"><span class="project-name">SchemaPose<span class="title-colon">:</span></span><span class="paper-subtitle">RGB-Based Category-Level Pose Estimation<br class="desktop-break"> with Parametric Category Schema</span></h1>
+      <h1 id="paper-title">SchemaPose: RGB-Based Category-Level Pose Estimation with Parametric Category Schema</h1>
       <div class="authors" aria-label="Authors">
         <a href="mailto:souglad21@sjtu.edu.cn">Shuang Wu<sup>*</sup></a>
         <a href="mailto:wjd_kznwl@sjtu.edu.cn">Jiude Wei<sup>*</sup></a>
@@ -44,31 +32,29 @@
       </div>
       <p class="affiliation">Shanghai Jiao Tong University</p>
       <p class="author-notes"><span><sup>*</sup> Equal contribution</span><span><sup>†</sup> Corresponding author</span></p>
+      <p class="venue">NeurIPS 2026</p>
       <div class="resource-links" aria-label="Project resources">
         <button class="resource-button" type="button" disabled>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 12h8M8 16h6"/></svg>
-          <span>Paper</span><span class="soon">Coming soon</span>
+          <span>Paper</span> <span class="soon">(Coming soon)</span>
         </button>
         <button class="resource-button" type="button" disabled>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></svg>
-          <span>Code</span><span class="soon">Coming soon</span>
+          <span>Code</span> <span class="soon">(Coming soon)</span>
         </button>
         <a class="resource-button video-link" href="#videos">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="m10 8 6 4-6 4z"/></svg>
-          <span>Watch videos</span><span aria-hidden="true">↗</span>
+          Videos
         </a>
       </div>
     </section>
 
     <section class="abstract-section" id="abstract" aria-labelledby="abstract-heading">
       <div class="reading-container">
-        <div class="section-heading"><span class="eyebrow">Overview</span><h2 id="abstract-heading">Abstract</h2></div>
+        <div class="section-heading"><h2 id="abstract-heading">Abstract</h2></div>
         <p class="abstract-text">RGB-based category-level 9D pose estimation remains highly challenging because a monocular system must generalize across unseen object instances while jointly inferring 3D translation, 3D rotation, and 3D size. Unlike instance-level pose estimation, the category-level setting requires the network to learn both what is shared across objects within a category and how individual instances vary in structure. This challenge is amplified in the RGB-only setting, where pose cues, category-level commonality, and instance-specific variation are entangled in appearance without direct geometric constraints, making it difficult for existing frameworks to learn a representation that is truly aligned with the category-level estimation objective. To address this problem, we propose SchemaPose, a schema-guided framework for RGB-based category-level pose estimation. SchemaPose equips the estimation pipeline with an explicit parametric schema for modeling category-level regularities together with structured instance variation, and uses the inferred schema variables to guide pose-related prediction in an end-to-end query-based framework. The same formulation also supports template instantiation, synthetic annotation, and pose learning within a unified framework. Experiments on synthetic and real data show that SchemaPose achieves state-of-the-art performance among RGB-based methods for category-level 9D pose estimation.</p>
       </div>
     </section>
 
     <section class="content-section container" id="schema" aria-labelledby="schema-heading">
-      <div class="section-heading"><span class="eyebrow">Representation</span><h2 id="schema-heading">Parametric Category Schema</h2></div>
+      <div class="section-heading"><h2 id="schema-heading">Parametric Category Schema</h2></div>
       <figure class="paper-figure" id="figure-1">
         <button class="figure-image" type="button" data-figure="1" aria-label="Enlarge Figure 1" aria-haspopup="dialog">
           <img src="assets/figures/figure-1.webp" width="2577" height="1078" alt="Parametric category schema: discrete part choices and continuous geometric parameters, compact schema representation, object instantiation, and schema-driven data generation." decoding="async">
@@ -86,7 +72,7 @@
     </section>
 
     <section class="content-section section-divider container" id="method" aria-labelledby="method-heading">
-      <div class="section-heading"><span class="eyebrow">Framework</span><h2 id="method-heading">Dual-Stage Schema Guidance</h2></div>
+      <div class="section-heading"><h2 id="method-heading">Method</h2></div>
       <figure class="paper-figure" id="figure-3">
         <button class="figure-image" type="button" data-figure="3" aria-label="Enlarge Figure 3" aria-haspopup="dialog">
           <img src="assets/figures/figure-3.webp" width="2590" height="936" alt="SchemaPose architecture with backbone, Transformer encoder and decoder, and schema-guided pose heads at the proposal and decoder stages." loading="lazy" decoding="async">
@@ -97,7 +83,7 @@
     </section>
 
     <section class="content-section section-divider container" id="results" aria-labelledby="results-heading">
-      <div class="section-heading"><span class="eyebrow">Evaluation</span><h2 id="results-heading">Results on CAMERA25 &amp; REAL275</h2></div>
+      <div class="section-heading"><h2 id="results-heading">Results</h2></div>
       <p class="table-scroll-hint">Scroll horizontally to see all metrics <span aria-hidden="true">↔</span></p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Table 1, benchmark comparison; scroll horizontally for all metrics">
         <table>
@@ -132,7 +118,7 @@
 
     <section class="videos-section" id="videos" aria-labelledby="videos-heading">
       <div class="container">
-        <div class="section-heading"><span class="eyebrow">In motion</span><h2 id="videos-heading">Video Results</h2></div>
+        <div class="section-heading"><h2 id="videos-heading">Video Results</h2></div>
         <div class="video-group-heading"><h3>Additional Scenes</h3><span>2 videos</span></div>
         <div class="video-grid additional-scenes">
           <figure class="video-card">
@@ -201,8 +187,8 @@
   </main>
 
   <footer class="site-footer container">
-    <div><a class="wordmark" href="#top">SchemaPose</a><p>NeurIPS 2026 · Shanghai Jiao Tong University</p></div>
-    <a class="contact-link" href="mailto:souglad21@sjtu.edu.cn">Contact ↗</a>
+    <p>SchemaPose · NeurIPS 2026 · Shanghai Jiao Tong University</p>
+    <a class="contact-link" href="mailto:souglad21@sjtu.edu.cn">Contact</a>
   </footer>
 
   <dialog class="figure-dialog" aria-labelledby="dialog-title">
